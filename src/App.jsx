@@ -1,10 +1,15 @@
-import NavBar from "./components/NavBar";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Boday from "./components/Boday";
 function App() {
   return (
     <>
-      <NavBar/>
-      <h1 class="text-3xl font-bold underline">Hello world!</h1>
+      <BrowserRouter basename="/">
+        <Routes>
+          <Route path="/" element={<Boday />}>
+            <Route path="/login" element={<>Login page</>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
