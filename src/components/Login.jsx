@@ -39,13 +39,13 @@ const Login = () => {
   return (
     <div className="h-screen flex flex-col">
       <LoginNavBar />
-      <div class="flex-1 flex justify-center items-center">
-        <div class="card w-96 bg-base-300 card-xl shadow-sm">
-          <div class="card-body">
-            <h2 class="card-title">🧑🏻‍💻 DB Login</h2>
+      <div className="flex-1 flex justify-center items-center">
+        <div className="card w-96 bg-base-300 card-xl shadow-sm">
+          <div className="card-body">
+            <h2 className="card-title">🧑🏻‍💻 DB Login</h2>
             <div>
-              <legend class="fieldset-legend">Email</legend>
-              <label class="input validator">
+              <legend className="fieldset-legend">Email</legend>
+              <label className="input validator">
                 <svg
                   className="h-[1em] opacity-50"
                   xmlns="http://www.w3.org/2000/svg"
@@ -77,8 +77,8 @@ const Login = () => {
               </div>
             </div>
             <div>
-              <legend class="fieldset-legend">Password</legend>
-              <label class="input validator">
+              <legend className="fieldset-legend">Password</legend>
+              <label className="input validator">
                 <svg
                   className="h-[1em] opacity-50"
                   xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ const Login = () => {
                   required
                   placeholder="Password"
                   value={password}
-                  minlength="8"
+                  minLength="8"
                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                   title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
                   onChange={(e) => {
@@ -123,7 +123,7 @@ const Login = () => {
                 At least one uppercase letter
               </p>
             </div>
-            <div class="justify-end card-actions">
+            <div className="justify-end card-actions">
               <button
                 className="btn btn-primary"
                 onClick={handleLogin}

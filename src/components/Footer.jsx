@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer class="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+    <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
       <aside>
         <p>
           Copyright &copy; {new Date().getFullYear()} - All right reserved by
