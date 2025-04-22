@@ -1,48 +1,15 @@
-import axios from "axios";
 import React from "react";
 import LoginNavBar from "./LoginNavBar";
 import Footer from "./Footer";
-import { useDispatch } from "react-redux";
-import { useNavigate, Link } from "react-router-dom";
-import { BASE_URL } from "../utils/constant";
-import { updateUser } from "../utils/userSlice";
-
-const Login = () => {
-  const [loading, setLoading] = React.useState(false);
-  //const [error, setError] = React.useState("");
-  const [email, setEmail] = React.useState("dhoni@dbdevbook.com");
-  const [password, setPassword] = React.useState("");
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const handleLogin = async () => {
-    setLoading(true);
-    try {
-      const res = await axios.post(
-        BASE_URL + "/login",
-        {
-          email,
-          password,
-        },
-        { withCredentials: true }
-      );
-      setLoading(false);
-      if (res && res.data && res.data.status) {
-        dispatch(updateUser(res.data.data));
-        navigate("/");
-      }
-    } catch (e) {
-      setLoading(false);
-      console.log(e);
-    }
-  };
+import { Link } from "react-router-dom";
+function Signup() {
   return (
     <div className="h-screen flex flex-col">
       <LoginNavBar />
       <div className="flex-1 flex justify-center items-center">
         <div className="card w-96 bg-base-300 card-xl shadow-sm">
           <div className="card-body">
-            <h2 className="card-title">🧑🏻‍💻 DB Login</h2>
+            <h2 className="card-title">🧑🏻‍💻 DB Sign Up</h2>
             <div>
               <legend className="fieldset-legend">Email</legend>
               <label className="input validator">
@@ -65,10 +32,10 @@ const Login = () => {
                 <input
                   type="email"
                   placeholder="mail@site.com"
-                  value={email}
+                  //value={email}
                   required
                   onChange={(e) => {
-                    setEmail(e.target.value);
+                    //setEmail(e.target.value);
                   }}
                 />
               </label>
@@ -104,12 +71,12 @@ const Login = () => {
                   type="password"
                   required
                   placeholder="Password"
-                  value={password}
+                  //value={password}
                   minLength="8"
                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                   title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
                   onChange={(e) => {
-                    setPassword(e.target.value);
+                    //setPassword(e.target.value);
                   }}
                 />
               </label>
@@ -125,18 +92,18 @@ const Login = () => {
             </div>
             <div className="justify-between card-actions">
               <Link
-                to="/signup"
+                to="/login"
                 className="text-sm self-center cursor-pointer text-primary"
               >
-                New user ? Sign up
+                Already user ? Login
               </Link>
               <button
                 className="btn btn-primary"
-                onClick={handleLogin}
-                disabled={loading}
+                //onClick={handleLogin}
+                //disabled={loading}
               >
-                {loading && <span className="loading loading-spinner"></span>}
-                Login
+                {/* {loading && <span className="loading loading-spinner"></span>} */}
+                Sign up
               </button>
             </div>
           </div>
@@ -145,6 +112,6 @@ const Login = () => {
       <Footer />
     </div>
   );
-};
+}
 
-export default Login;
+export default Signup;

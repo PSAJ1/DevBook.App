@@ -39,7 +39,7 @@ function Requests() {
         withCredentials: true,
       });
       console.log(res?.data?.data);
-      if (res && res.data && res.data.data.length > 0) {
+      if (res && res.data && res.data.status) {
         setRequests(res.data.data);
       }
     } catch (e) {}

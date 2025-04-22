@@ -15,13 +15,13 @@ function Connections() {
       const res = await axios.get(BASE_URL + "/user/connection", {
         withCredentials: true,
       });
-      console.log(res?.data?.data);
-      if (res && res.data && res.data.data.length > 0) {
+      if (res && res.data && res.data.status) {
         setConnections(res.data.data);
       }
     } catch (e) {}
   }
-  if (!connections) return <span className="loading loading-bars loading-xl"></span>;
+  if (!connections)
+    return <span className="loading loading-bars loading-xl"></span>;
   if (connections.length === 0) return <h3>No connections found</h3>;
 
   return (
