@@ -36,15 +36,15 @@ function Connections() {
               <div>
                 <img
                   className="size-10 rounded-box"
-                  src={conn.toUserId.photoUrl}
+                  src={conn.photoUrl}
                 />
               </div>
               <div>
                 <div>
-                  {conn.toUserId.firstName + " " + conn.toUserId.lastName}
+                  {conn.firstName + " " + conn.lastName}
                 </div>
                 <div className="text-xs uppercase font-semibold opacity-60">
-                  {conn.toUserId.age + ", " + GetGender(conn.toUserId.gender)}
+                  {conn.age + ", " + GetGender(conn.gender)}
                 </div>
               </div>
             </li>
