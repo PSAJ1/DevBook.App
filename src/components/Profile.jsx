@@ -57,8 +57,8 @@ function Profile() {
   return (
     user && (
       <>
-        <div className="card card-side bg-base-300 shadow-sm">
-          <div className="card-body">
+        <div className="card card-side bg-base-300 shadow-sm overflow-y-auto">
+          <div className="card-body min-w-[410px]">
             <div className="flex gap-2">
               <div>
                 <legend className="fieldset-legend">First Name</legend>
@@ -206,8 +206,8 @@ function Profile() {
               </button>
             </div>
           </div>
-          <figure>
-            <div className="card bg-base-300 w-100 shadow-sm">
+          <figure className="min-w-[410px]">
+            <div className="card bg-base-300 shadow-sm">
               <figure>
                 <img src={photoUrl} alt="avatar" />
               </figure>
