@@ -143,7 +143,7 @@ function Profile() {
             <div className="flex gap-2">
               <div>
                 <legend className="fieldset-legend">
-                  Date Of Birth (dd/mm/yyyy)
+                  Date Of Birth
                 </legend>
                 <input
                   type="text"
