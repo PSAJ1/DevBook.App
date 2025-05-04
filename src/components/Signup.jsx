@@ -15,7 +15,7 @@ function Signup() {
   const [lastName, setLastName] = React.useState("");
   const [gender, setGender] = React.useState(1);
   const [dob, setDob] = React.useState("");
-  const [age] = React.useState(1);
+  const [age, setAge] = React.useState(1);
   const [phone, setPhone] = React.useState("");
   const [photoUrl, setPhotoUrl] = React.useState("");
   const [country, setCountry] = React.useState("");
@@ -24,6 +24,7 @@ function Signup() {
   const [password, setPassword] = React.useState("");
 
   const handleSignUp = async () => {
+    debugger
     setLoading(true);
     try {
       const res = await axios.post(
@@ -32,9 +33,9 @@ function Signup() {
           firstName,
           lastName,
           gender,
-          dateOfBirth:dob,
+          dateOfBirth: dob,
           age,
-          phoneNumber,
+          phoneNumber:phone,
           photoUrl,
           country,
           bio,
@@ -45,8 +46,8 @@ function Signup() {
       );
       setLoading(false);
       if (res && res.data && res.data.status) {
-        dispatch(updateUser(res.data.data));
-        navigate("/");
+        //dispatch(updateUser(res.data.data));
+        navigate("/profile");
       }
     } catch (e) {
       setLoading(false);
@@ -115,10 +116,10 @@ function Signup() {
                 <input
                   required
                   type="date"
-                  placeholder="dd/mm/yyyy"
                   className="input"
                   value={dob}
                   onChange={(e) => {
+                    debugger;
                     setDob(e.target.value);
                   }}
                 />

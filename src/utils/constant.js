@@ -1,1 +1,1 @@
-export const BASE_URL = "/api";
+export const BASE_URL =  location.hostname.includes("http://localhost:3000")?"http://localhost:3000":"/api";
